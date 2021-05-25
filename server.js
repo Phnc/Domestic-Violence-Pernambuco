@@ -8,7 +8,11 @@ const host = '0.0.0.0';
 require('./app/routes')(app);
 
 app.get('/', (req, res) => {
-    res.send("We could not find this route :(");
+    res.sendFile(__dirname + "/404.html");
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(__dirname + "/404.html");
 });
 
 app.listen(port, host, () => {
