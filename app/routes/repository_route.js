@@ -1,7 +1,7 @@
 const excelToJson = require('convert-excel-to-json');
 
 
-const result = excelToJson({
+/*const result = excelToJson({
     sourceFile: 'data/dados_violencia.xlsx',
     header:{
         rows: 1
@@ -16,20 +16,22 @@ const result = excelToJson({
         G: 'idade',
         H: 'total_envolvidos'
     },
-});
+});*/
+
+const json = require('../../data/dados.json');
 
 module.exports = function (app) {
 
     app.get("/data", (req, res) => {
-        const formattedResult = result.Plan1.map(obj => {
+        /*const formattedResult = result.Plan1.map(obj => {
             let formatted = {
                 ...obj,
                 idade: obj.idade.substring(3),
             }
             return formatted;
-        });
+        });*/
 
-        res.send(formattedResult);
+        res.send(json);
     });
 
 }
