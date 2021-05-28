@@ -61,8 +61,13 @@ module.exports = function (app) {
 
         uniqueCategories.forEach((category) => {
             let len = json.filter((obj) => obj.natureza == category);
-            arr.push(len.length);
+            arr.push({
+                    natureza: category,
+                    quantidade: len.length
+                    });
         });
+
+        arr.sort((a,b) => b.quantidade - a.quantidade);
 
         res.send(arr);
     });
