@@ -1,4 +1,4 @@
-const excelToJson = require('convert-excel-to-json');
+//const excelToJson = require('convert-excel-to-json');
 
 
 /*const result = excelToJson({
@@ -32,6 +32,20 @@ module.exports = function (app) {
         });*/
 
         res.send(json);
+    });
+
+    app.get("/data/cases_year", (req, res) => {
+        const cases_2015 = json.filter((obj) => obj.ano == 2015).length;
+        const cases_2016 = json.filter((obj) => obj.ano == 2016).length;
+        const cases_2017 = json.filter((obj) => obj.ano == 2017).length;
+        const cases_2018 = json.filter((obj) => obj.ano == 2018).length;
+        const cases_2019 = json.filter((obj) => obj.ano == 2019).length;
+        const cases_2020 = json.filter((obj) => obj.ano == 2020).length;
+        const cases_2021 = json.filter((obj) => obj.ano == 2021).length;
+
+        const array = [cases_2015, cases_2016, cases_2017, cases_2018, cases_2019, cases_2020, cases_2021];
+
+        res.send(array);
     });
 
 }
