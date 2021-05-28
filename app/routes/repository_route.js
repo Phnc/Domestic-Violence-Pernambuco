@@ -48,4 +48,23 @@ module.exports = function (app) {
         res.send(array);
     });
 
+    app.get("/data/nature", (req, res) => {
+        const categories = json.map((obj) => {
+            let category = obj.natureza;
+            return category;
+        });
+
+        const uniqueCategories = [... new Set(categories)];
+
+        let arr = [];
+
+
+        uniqueCategories.forEach((category) => {
+            let len = json.filter((obj) => obj.natureza == category);
+            arr.push(len.length);
+        });
+
+        res.send(arr);
+    });
+
 }
