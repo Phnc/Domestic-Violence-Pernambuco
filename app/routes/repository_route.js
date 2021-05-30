@@ -72,4 +72,29 @@ module.exports = function (app) {
         res.send(arr);
     });
 
+    app.get("/data/cases_age", (req, res) => {
+        let ages = json.map((obj) => {
+            return obj.idade;
+        });
+        const uniqueAges = [... new Set(ages)];
+
+        let arr = [];
+
+        uniqueAges.forEach((age) => {
+            let qtd = json.filter((obj) => obj.idade == age);
+            let idade = age;
+            if(idade == "zio)"){
+                idade = "Não especificada"
+            }
+            arr.push({
+                idade: idade,
+                quantidade: qtd.length
+
+            })
+        });
+
+        res.send(arr);
+
+    });
+
 }
