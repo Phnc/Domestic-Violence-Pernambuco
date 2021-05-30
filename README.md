@@ -8,6 +8,16 @@ And you can access the finished result on this <a href="https://domestic-violenc
 ## Usage
 This application is available on heroku through this <a href="https://domestic-violence.herokuapp.com/" target="_blank">link</a>
 
+## Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8000
+npm run dev
+```
+
 # :triangular_flag_on_post: Endpoints
 
 ### `/data - GET`  Fetches all available data. Returns a JSON array.
