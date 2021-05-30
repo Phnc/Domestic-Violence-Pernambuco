@@ -1,12 +1,16 @@
 # Domestic-Violence-Pernambuco
 API to retrieve data about domestic violence in the state of Pernambuco - Brazil
 
+## Front-end
+The front-end code for this project is available <a href="https://github.com/Phnc/domestic-violence" target="_blank">here</a>.
+And you can access the finished result on this <a href="https://domestic-violence-pe.netlify.app/#/intro" target="_blank">link</a>
+
 ## Usage
 This application is available on heroku through this <a href="https://domestic-violence.herokuapp.com/" target="_blank">link</a>
 
 # :triangular_flag_on_post: Endpoints
 
-### `/data - GET`  Fetches all available data. Returns a JSON.
+### `/data - GET`  Fetches all available data. Returns a JSON array.
 
 ### `/data/cases_year - GET` Fetches the number of cases per year. Returns an array with 7 positions, being the first the year of 2015 and the last 2021.
 
